@@ -11,16 +11,23 @@ public class CustomerService {
     private CustomerRepository customerRepository;
 
     public CustomerService(CustomerRepository customerRepository) {
+
         this.customerRepository = customerRepository;
     }
+
     public List<Customer> customerList(){
+
         return  customerRepository.findAll();
     }
+
     public Customer findCustomerById (Long id){
-        return  customerRepository.findById(id).orElseThrow(()->
+        return  customerRepository.findById(id)
+                .orElseThrow(()->
                 new RuntimeException("Customer not found"));
     }
+
     public Customer saveCustomer(Customer customer){
+
         return  customerRepository.save(customer);
     }
 }

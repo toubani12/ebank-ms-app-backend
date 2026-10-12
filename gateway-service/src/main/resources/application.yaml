@@ -15,7 +15,7 @@ spring:
               predicates:
                 - Path=/accounts/**
     discovery:
-      enabled: false
+      enabled: true
 
 server:
   port: 9999
